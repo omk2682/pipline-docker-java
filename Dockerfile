@@ -1,14 +1,14 @@
-# Step 1: Use a Java base image
+# Use a lightweight Java runtime
 FROM openjdk:11-jdk-slim
 
-# Step 2: Set the directory inside the container
+# Set the folder inside the container
 WORKDIR /app
 
-# Step 3: Copy your java file into the container
-COPY hello.java .
+# Copy your java file from your repo into the container
+COPY helloworld.java .
 
-# Step 4: Compile the code
-RUN javac hello.java
+# Compile the java file
+RUN javac helloworld.java
 
-# Step 5: Run the program
-CMD ["java", "hello"]
+# Run the program when the container starts
+CMD ["java", "helloworld"]
